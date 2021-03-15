@@ -1,11 +1,17 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/BeAce/go-utils/hello"
+	"log"
+	"net/http"
 )
 
 func main() {
-	fmt.Printf("1+2=%d", hello.Sum(1, 2))
+	http.HandleFunc("/foo", fooHandler)
+
+	log.Fatal(http.ListenAndServe(":8080", nil))
+}
+
+func fooHandler (w http.ResponseWriter, r *http.Request) {
+
+	w.Write([]byte("<h1 style='text-align:center'>hello go</h1>"))
 }
