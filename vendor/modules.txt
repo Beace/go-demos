@@ -1,0 +1,3 @@
+# github.com/BeAce/go-utils v1.0.0
+## explicit
+github.com/BeAce/go-utils/hello
